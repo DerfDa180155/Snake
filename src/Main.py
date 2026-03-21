@@ -1,5 +1,6 @@
 import pygame
 
+import Snake
 
 class main:
     def __init__(self):
@@ -17,6 +18,8 @@ class main:
 
         self.clock = pygame.time.Clock()
         self.running = True
+
+        self.snake = Snake.Snake()
 
         self.run()
 
