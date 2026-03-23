@@ -37,11 +37,17 @@ class main:
 
             self.screen.fill((50, 50, 50))
 
+            self.drawBoard(100, 100)
 
 
 
             pygame.display.flip()
             self.clock.tick(60)
+
+    def drawBoard(self, startX, startY):
+        for y in range(self.snake.sizeY):
+            for x in range(self.snake.sizeX):
+                pygame.draw.rect(self.screen, (255,255,255), (startX + 10*x, startY + 10*y, 5, 5))
 
 
 if __name__ == "__main__":
