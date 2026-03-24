@@ -47,7 +47,10 @@ class main:
     def drawBoard(self, startX, startY):
         for y in range(self.snake.sizeY):
             for x in range(self.snake.sizeX):
-                pygame.draw.rect(self.screen, (255,255,255), (startX + 10*x, startY + 10*y, 5, 5))
+                color = (255, 0, 0)
+                if self.snake.map[y][x] == "":
+                    color = (255, 255, 255)
+                pygame.draw.rect(self.screen, color, (startX + 30*x, startY + 30*y, 25, 25))
 
 
 if __name__ == "__main__":
