@@ -1,4 +1,4 @@
-
+import random
 
 class Snake:
     def __init__(self):
@@ -21,4 +21,7 @@ class Snake:
         pass
 
     def spawnFood(self):
-        pass
+        x = random.randint(0, self.sizeX-1)
+        y = random.randint(0, self.sizeY-1)
+
+        self.map[y][x] = "x"
