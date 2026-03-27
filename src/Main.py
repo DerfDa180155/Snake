@@ -37,7 +37,7 @@ class main:
 
             self.screen.fill((50, 50, 50))
 
-            self.drawBoard(100, 100, 1000, 1000, 1)
+            self.drawBoard(100, 100, 1000, 1000, 10)
 
             self.snake.spawnFood()
 
@@ -52,7 +52,7 @@ class main:
                     color = (255, 255, 255)
                 elif self.snake.map[y][x] == "x":
                     color = (255, 0, 0)
-                pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, 25, 25))
+                pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
 
 
 if __name__ == "__main__":
