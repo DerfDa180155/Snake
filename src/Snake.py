@@ -7,20 +7,32 @@ class Snake:
         self.sizeX = 20
         self.sizeY = 20
 
+        self.emptyField = ""
+        self.foodField = "x"
+
+        self.lastFoodLocation = [-1, -1]
+
         self.generateEmptyBoard()
+        self.spawnFood()
 
     def generateEmptyBoard(self):
         self.map = []
         for i in range(self.sizeY):
             temp = []
             for j in range(self.sizeX):
-                temp.append("")
+                temp.append(self.emptyField)
             self.map.append(temp)
 
     def movePlayer(self):
         pass
 
+    def foodPlaced(self):
+        return self.map[self.lastFoodLocation[1]][self.lastFoodLocation[0]] == self.foodField
+
     def spawnFood(self):
+        if self.foodPlaced():
+            return
+
         x = random.randint(0, self.sizeX-1)
         y = random.randint(0, self.sizeY-1)
 
@@ -28,7 +40,8 @@ class Snake:
             x = random.randint(0, self.sizeX - 1)
             y = random.randint(0, self.sizeY - 1)
 
-        self.map[y][x] = "x"
+        self.map[y][x] = self.foodField
+        self.lastFoodLocation = [x, y]
 
     def isEmpty(self, x, y):
-        return self.map[y][x] == ""
+        return self.map[y][x] == self.emptyField
