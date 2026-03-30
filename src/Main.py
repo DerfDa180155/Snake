@@ -52,6 +52,8 @@ class main:
                     color = (255, 255, 255)
                 elif self.snake.map[y][x] == self.snake.foodField:
                     color = (255, 0, 0)
+                elif self.snake.map[y][x] == self.snake.playerField:
+                    color = (0, 255, 64)
                 pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
 
 

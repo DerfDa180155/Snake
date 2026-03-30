@@ -7,13 +7,18 @@ class Snake:
         self.sizeX = 20
         self.sizeY = 20
 
+        self.player = []
+
         self.emptyField = ""
         self.foodField = "x"
+        self.playerField = "o"
 
         self.lastFoodLocation = [-1, -1]
 
         self.generateEmptyBoard()
+
         self.spawnFood()
+        self.spawnPlayer()
 
     def generateEmptyBoard(self):
         self.map = []
@@ -22,6 +27,10 @@ class Snake:
             for j in range(self.sizeX):
                 temp.append(self.emptyField)
             self.map.append(temp)
+
+    def spawnPlayer(self):
+        self.player.append([int(self.sizeX/2), int(self.sizeY/2)])
+        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
 
     def movePlayer(self):
         pass
