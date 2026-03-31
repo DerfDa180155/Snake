@@ -13,6 +13,8 @@ class Snake:
         self.foodField = "x"
         self.playerField = "o"
 
+        self.playerDirection = 0
+
         self.lastFoodLocation = [-1, -1]
 
         self.generateEmptyBoard()
