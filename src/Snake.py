@@ -37,6 +37,9 @@ class Snake:
     def movePlayer(self):
         pass
 
+    def growPlayer(self):
+        pass
+
     def foodPlaced(self):
         return self.map[self.lastFoodLocation[1]][self.lastFoodLocation[0]] == self.foodField
 
