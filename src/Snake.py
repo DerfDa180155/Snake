@@ -35,10 +35,21 @@ class Snake:
         self.map[self.player[0][1]][self.player[0][0]] = self.playerField
 
     def movePlayer(self):
-        pass
+
+        match (self.playerDirection):
+            case 0:
+                pass
+            case 1:
+                pass
+            case 2:
+                pass
+            case 3:
+                pass
+
+        self.player.pop(0)
 
     def growPlayer(self):
-        pass
+        self.spawnFood()
 
     def foodPlaced(self):
         return self.map[self.lastFoodLocation[1]][self.lastFoodLocation[0]] == self.foodField
