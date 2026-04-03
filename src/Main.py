@@ -40,7 +40,7 @@ class main:
             self.drawBoard(100, 100, 1000, 1000, 10)
 
             self.snake.spawnFood()
-            #self.snake.movePlayer()
+            self.snake.movePlayer()
 
             pygame.display.flip()
             self.clock.tick(60)

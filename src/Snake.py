@@ -35,10 +35,17 @@ class Snake:
         self.map[self.player[0][1]][self.player[0][0]] = self.playerField
 
     def movePlayer(self):
+        x = self.player[len(self.player)-1][1]
+        y = self.player[len(self.player)-1][0]
+
+        moved = False
 
         match (self.playerDirection):
             case 0:
-                pass
+                if x+1 < self.sizeX:
+                    self.player.append([y, x+1])
+                    self.map[y][x+1] = self.playerField
+                    moved = True
             case 1:
                 pass
             case 2:
@@ -46,7 +53,9 @@ class Snake:
             case 3:
                 pass
 
-        self.player.pop(0)
+        if moved:
+            self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
+            self.player.pop(0)
 
     def growPlayer(self):
         self.spawnFood()
