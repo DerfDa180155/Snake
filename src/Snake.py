@@ -37,7 +37,6 @@ class Snake:
     def movePlayer(self):
         x = self.player[len(self.player)-1][1]
         y = self.player[len(self.player)-1][0]
-
         moved = False
 
         match (self.playerDirection):
@@ -47,11 +46,20 @@ class Snake:
                     self.map[y][x+1] = self.playerField
                     moved = True
             case 1:
-                pass
+                if y-1 < self.sizeY:
+                    self.player.append([y-1, x])
+                    self.map[y-1][x] = self.playerField
+                    moved = True
             case 2:
-                pass
+                if x-1 < self.sizeX:
+                    self.player.append([y, x-1])
+                    self.map[y][x-1] = self.playerField
+                    moved = True
             case 3:
-                pass
+                if y+1 < self.sizeY:
+                    self.player.append([y+1, x])
+                    self.map[y+1][x] = self.playerField
+                    moved = True
 
         if moved:
             self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
