@@ -31,6 +31,14 @@ class main:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: # Quit the Game
                         self.running = False
+                    elif event.key == pygame.K_w or event.key == pygame.K_UP:
+                        self.snake.playerDirection = 3
+                    elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
+                        self.snake.playerDirection = 2
+                    elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
+                        self.snake.playerDirection = 1
+                    elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
+                        self.snake.playerDirection = 0
 
             self.windowWidth = self.screen.get_width()
             self.windowHeight = self.screen.get_height()

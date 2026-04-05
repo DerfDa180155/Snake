@@ -46,19 +46,19 @@ class Snake:
                     self.map[y][x+1] = self.playerField
                     moved = True
             case 1:
-                if y-1 < self.sizeY:
-                    self.player.append([y-1, x])
-                    self.map[y-1][x] = self.playerField
+                if y+1 < self.sizeY:
+                    self.player.append([y+1, x])
+                    self.map[y+1][x] = self.playerField
                     moved = True
             case 2:
-                if x-1 < self.sizeX:
+                if x-1 >= 0:
                     self.player.append([y, x-1])
                     self.map[y][x-1] = self.playerField
                     moved = True
             case 3:
-                if y+1 < self.sizeY:
-                    self.player.append([y+1, x])
-                    self.map[y+1][x] = self.playerField
+                if y-1 >= 0:
+                    self.player.append([y-1, x])
+                    self.map[y-1][x] = self.playerField
                     moved = True
 
         if moved:
