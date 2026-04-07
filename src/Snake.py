@@ -61,12 +61,12 @@ class Snake:
                     self.map[y-1][x] = self.playerField
                     moved = True
 
-        if moved:
+        if moved and not self.growPlayer():
             self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
             self.player.pop(0)
 
     def growPlayer(self):
-        self.spawnFood()
+        return self.player[len(self.player)-1] == self.lastFoodLocation
 
     def foodPlaced(self):
         return self.map[self.lastFoodLocation[1]][self.lastFoodLocation[0]] == self.foodField
