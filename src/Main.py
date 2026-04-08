@@ -24,6 +24,7 @@ class main:
         self.run()
 
     def run(self):
+        delay = 0
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # Quit the Game
@@ -47,8 +48,12 @@ class main:
 
             self.drawBoard(100, 100, 1000, 1000, 10)
 
-            self.snake.movePlayer()
-            self.snake.spawnFood()
+            if delay <= 0:
+                self.snake.movePlayer()
+                self.snake.spawnFood()
+                delay = 30
+
+            delay -= 1
 
             pygame.display.flip()
             self.clock.tick(60)
