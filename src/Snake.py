@@ -67,10 +67,12 @@ class Snake:
 
     def growPlayer(self):
         self.spawnFood()
-        return self.player[len(self.player)-1] == self.lastFoodLocation
+        playerX = self.player[len(self.player)-1][1]
+        playerY = self.player[len(self.player)-1][0]
+        return playerY == self.lastFoodLocation[0] and playerX == self.lastFoodLocation[1]
 
     def foodPlaced(self):
-        return self.map[self.lastFoodLocation[1]][self.lastFoodLocation[0]] == self.foodField
+        return self.map[self.lastFoodLocation[0]][self.lastFoodLocation[1]] == self.foodField
 
     def spawnFood(self):
         if self.foodPlaced():
@@ -84,7 +86,7 @@ class Snake:
             y = random.randint(0, self.sizeY - 1)
 
         self.map[y][x] = self.foodField
-        self.lastFoodLocation = [x, y]
+        self.lastFoodLocation = [y, x]
 
     def isEmpty(self, x, y):
         return self.map[y][x] == self.emptyField
