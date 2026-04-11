@@ -66,10 +66,11 @@ class Snake:
             self.player.pop(0)
 
     def growPlayer(self):
-        self.spawnFood()
+        foodLocation = self.lastFoodLocation
         playerX = self.player[len(self.player)-1][1]
         playerY = self.player[len(self.player)-1][0]
-        return playerY == self.lastFoodLocation[0] and playerX == self.lastFoodLocation[1]
+        self.spawnFood()
+        return playerY == foodLocation[0] and playerX == foodLocation[1]
 
     def foodPlaced(self):
         return self.map[self.lastFoodLocation[0]][self.lastFoodLocation[1]] == self.foodField
