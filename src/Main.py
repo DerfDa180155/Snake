@@ -51,7 +51,7 @@ class main:
             if delay <= 0:
                 self.snake.movePlayer()
                 #self.snake.spawnFood()
-                delay = 30
+                delay = 10
 
             delay -= 1
 
