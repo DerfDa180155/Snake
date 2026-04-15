@@ -35,6 +35,12 @@ class Snake:
         self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
         self.map[self.player[0][1]][self.player[0][0]] = self.playerField
 
+        self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
+        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
+
+        self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
+        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
+
     def movePlayer(self):
         x = self.player[len(self.player)-1][1]
         y = self.player[len(self.player)-1][0]
