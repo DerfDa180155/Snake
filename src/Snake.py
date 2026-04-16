@@ -31,15 +31,16 @@ class Snake:
             self.map.append(temp)
 
     def spawnPlayer(self):
-        print(int(self.sizeX / 2), int(self.sizeY / 2))
-        self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
-        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
+        self.player.append([int(self.sizeY / 2), int(self.sizeX / 2) - 2])
+        self.map[self.player[0][0]][self.player[0][1]] = self.playerField
 
-        self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
-        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
+        self.player.append([int(self.sizeY / 2), int(self.sizeX / 2) - 1])
+        self.map[self.player[1][0]][self.player[1][1]] = self.playerField
 
-        self.player.append([int(self.sizeX / 2), int(self.sizeY / 2)])
-        self.map[self.player[0][1]][self.player[0][0]] = self.playerField
+        self.player.append([int(self.sizeY / 2), int(self.sizeX / 2)])
+        self.map[self.player[2][0]][self.player[2][1]] = self.playerField
+
+        print(self.player)
 
     def movePlayer(self):
         x = self.player[len(self.player)-1][1]
