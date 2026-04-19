@@ -45,6 +45,9 @@ class Snake:
         print(self.player)
 
     def movePlayer(self):
+        if self.gameOver:
+            return
+
         x = self.player[len(self.player)-1][1]
         y = self.player[len(self.player)-1][0]
         moved = False
