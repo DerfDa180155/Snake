@@ -55,24 +55,28 @@ class Snake:
         match (self.playerDirection):
             case 0:
                 if x+1 < self.sizeX:
-                    self.player.append([y, x+1])
-                    self.map[y][x+1] = self.playerField
-                    moved = True
+                    if self.map[y][x+1] != self.playerField:
+                        self.player.append([y, x+1])
+                        self.map[y][x+1] = self.playerField
+                        moved = True
             case 1:
                 if y+1 < self.sizeY:
-                    self.player.append([y+1, x])
-                    self.map[y+1][x] = self.playerField
-                    moved = True
+                    if self.map[y+1][x] != self.playerField:
+                        self.player.append([y+1, x])
+                        self.map[y+1][x] = self.playerField
+                        moved = True
             case 2:
                 if x-1 >= 0:
-                    self.player.append([y, x-1])
-                    self.map[y][x-1] = self.playerField
-                    moved = True
+                    if self.map[y][x-1] != self.playerField:
+                        self.player.append([y, x-1])
+                        self.map[y][x-1] = self.playerField
+                        moved = True
             case 3:
                 if y-1 >= 0:
-                    self.player.append([y-1, x])
-                    self.map[y-1][x] = self.playerField
-                    moved = True
+                    if self.map[y-1][x] != self.playerField:
+                        self.player.append([y-1, x])
+                        self.map[y-1][x] = self.playerField
+                        moved = True
 
         if moved and not self.growPlayer():
             self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
