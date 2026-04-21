@@ -55,6 +55,9 @@ class main:
 
             delay -= 1
 
+            if self.snake.gameOver:
+                self.drawGameOver()
+
             pygame.display.flip()
             self.clock.tick(60)
 
@@ -69,6 +72,9 @@ class main:
                 elif self.snake.map[y][x] == self.snake.playerField:
                     color = (0, 255, 64)
                 pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
+
+    def drawGameOver(self):
+        print("GameOver")
 
 
 if __name__ == "__main__":
