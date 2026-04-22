@@ -75,6 +75,7 @@ class main:
 
     def drawGameOver(self):
         print("GameOver")
+        pygame.draw.rect(self.screen, (10, 10, 10), (100, 100, 1000, 1000))
 
 
 if __name__ == "__main__":
