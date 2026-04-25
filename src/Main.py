@@ -73,9 +73,10 @@ class main:
                     color = (0, 255, 64)
                 pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
 
-    def drawGameOver(self):
+    def drawGameOver(self, posX, posY, sizeX, sizeY):
         pygame.draw.rect(self.screen, (10, 10, 10), (self.windowWidth/2-500, self.windowHeight/2-400, 1000, 800))
         text = "GameOver"
+        textSize = 20
 
 
 if __name__ == "__main__":
