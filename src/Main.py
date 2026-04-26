@@ -56,7 +56,7 @@ class main:
             delay -= 1
 
             if self.snake.gameOver:
-                self.drawGameOver()
+                self.drawGameOver(self.windowWidth/2-500, self.windowHeight/2-400, 1000, 800)
 
             pygame.display.flip()
             self.clock.tick(60)
