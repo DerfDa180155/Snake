@@ -75,8 +75,15 @@ class main:
 
     def drawGameOver(self, posX, posY, sizeX, sizeY):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
+
         text = "GameOver"
-        textSize = 20
+        textSize = 50
+        font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+        text = font.render(text, True, (255, 255, 255))
+        newRect = text.get_rect()
+        newRect.centerx = posX + sizeX/2
+        newRect.centery = posY + sizeY/2
+        self.screen.blit(text, newRect)
 
 
 if __name__ == "__main__":
