@@ -82,7 +82,7 @@ class main:
         text = font.render(text, True, (255, 255, 255))
         newRect = text.get_rect()
         newRect.centerx = posX + sizeX/2
-        newRect.centery = posY + sizeY/2
+        newRect.centery = posY + sizeY/4
         self.screen.blit(text, newRect)
 
 
