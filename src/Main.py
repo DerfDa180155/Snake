@@ -77,7 +77,7 @@ class main:
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
         text = "GameOver"
-        textSize = 50
+        textSize = 100
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
         text = font.render(text, True, (255, 255, 255))
         newRect = text.get_rect()
