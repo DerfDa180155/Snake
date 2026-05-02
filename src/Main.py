@@ -85,7 +85,7 @@ class main:
         newRect.centery = posY + sizeY/4
         self.screen.blit(text, newRect)
 
-        text = "Score: " + "1"
+        text = "Score: " + str(self.snake.score)
         textSize = 30
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
         text = font.render(text, True, (255, 255, 255))
