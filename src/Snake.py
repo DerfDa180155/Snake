@@ -82,6 +82,8 @@ class Snake:
         if moved and not self.growPlayer():
             self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
             self.player.pop(0)
+        else:
+            self.score += 1
 
         if not moved:
             self.gameOver = True
