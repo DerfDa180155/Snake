@@ -18,7 +18,7 @@ class Snake:
         self.lastFoodLocation = [-1, -1]
 
         self.gameOver = False
-        self.score = 0
+        self.score = -1
 
         self.generateEmptyBoard()
 
