@@ -94,6 +94,15 @@ class main:
         newRect.centery = posY + sizeY / 2
         self.screen.blit(text, newRect)
 
+        text = "press x to restart"
+        textSize = 20
+        font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+        text = font.render(text, True, (255, 255, 255))
+        newRect = text.get_rect()
+        newRect.centerx = posX + sizeX / 2
+        newRect.centery = posY + sizeY / 1.5
+        self.screen.blit(text, newRect)
+
 
 if __name__ == "__main__":
     main()
