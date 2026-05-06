@@ -40,6 +40,8 @@ class main:
                         self.snake.playerDirection = 1
                     elif (event.key == pygame.K_d or event.key == pygame.K_RIGHT) and self.snake.playerDirection != 2:
                         self.snake.playerDirection = 0
+                    elif event.key == pygame.K_x and self.snake.gameOver:
+                        self.snake.gameOver = False
 
             self.windowWidth = self.screen.get_width()
             self.windowHeight = self.screen.get_height()
