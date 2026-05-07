@@ -25,6 +25,9 @@ class Snake:
         self.spawnFood()
         self.spawnPlayer()
 
+    def reset(self):
+        pass
+
     def generateEmptyBoard(self):
         self.map = []
         for i in range(self.sizeY):
