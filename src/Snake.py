@@ -26,7 +26,14 @@ class Snake:
         self.spawnPlayer()
 
     def reset(self):
-        pass
+        self.map = []
+        self.gameOver = False
+        self.player = []
+
+        self.generateEmptyBoard()
+
+        self.spawnFood()
+        self.spawnPlayer()
 
     def generateEmptyBoard(self):
         self.map = []
