@@ -27,8 +27,14 @@ class Snake:
 
     def reset(self):
         self.map = []
-        self.gameOver = False
         self.player = []
+
+        self.playerDirection = 0
+
+        self.lastFoodLocation = [-1, -1]
+
+        self.gameOver = False
+        self.score = -1
 
         self.generateEmptyBoard()
 
