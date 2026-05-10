@@ -13,7 +13,7 @@ class main:
         self.windowWidth = 1500
         self.windowHeight = 1500
 
-        self.screen = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.GL_DOUBLEBUFFER)
+        self.screen = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.GL_DOUBLEBUFFER | pygame.RESIZABLE)
         pygame.display.set_caption("Snake by David Derflinger")
 
         self.clock = pygame.time.Clock()
@@ -48,7 +48,7 @@ class main:
 
             self.screen.fill((50, 50, 50))
 
-            self.drawBoard(100, 100, 1000, 1000, 10)
+            self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
             if delay <= 0:
                 self.snake.movePlayer()
@@ -62,6 +62,9 @@ class main:
 
             pygame.display.flip()
             self.clock.tick(60)
+
+    def drawBoardWithWindowSize(self, windowWidth, windowHeight):
+        self.drawBoard(100, 100, 1000, 1000, 10)
 
     def drawBoard(self, startX, startY, width, height, gapSize):
         for y in range(self.snake.sizeY):
