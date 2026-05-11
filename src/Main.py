@@ -64,7 +64,7 @@ class main:
             self.clock.tick(60)
 
     def drawBoardWithWindowSize(self, windowWidth, windowHeight):
-        self.drawBoard(100, 100, 1000, 1000, 10)
+        self.drawBoard(windowWidth/2-windowWidth/3, windowHeight/2-windowHeight/3, windowWidth/1.5, windowHeight/1.5, 10)
 
     def drawBoard(self, startX, startY, width, height, gapSize):
         for y in range(self.snake.sizeY):
