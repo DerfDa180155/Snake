@@ -67,7 +67,7 @@ class main:
         smaller = windowWidth
         if windowHeight < windowWidth:
             smaller = windowHeight
-        self.drawBoard(windowWidth/2-windowWidth/3, windowHeight/2-windowHeight/3, smaller/1.5, smaller/1.5, 10)
+        self.drawBoard(windowWidth/2-windowWidth/3, smaller/2-smaller/3, smaller/1.5, smaller/1.5, 10)
 
     def drawBoard(self, startX, startY, width, height, gapSize):
         for y in range(self.snake.sizeY):
