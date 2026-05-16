@@ -61,7 +61,7 @@ class main:
                 smaller = self.windowWidth
                 if self.windowHeight < self.windowWidth:
                     smaller = self.windowHeight
-                self.drawGameOver(self.windowWidth/2-500, self.windowHeight/2-400, smaller/1.5, smaller/2)
+                self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2)
 
             pygame.display.flip()
             self.clock.tick(60)
