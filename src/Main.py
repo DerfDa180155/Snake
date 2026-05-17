@@ -87,8 +87,10 @@ class main:
     def drawGameOver(self, posX, posY, sizeX, sizeY):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
+        baseSize = 50
+
         text = "GameOver"
-        textSize = 100
+        textSize = baseSize+50
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
         text = font.render(text, True, (255, 255, 255))
         newRect = text.get_rect()
@@ -97,7 +99,7 @@ class main:
         self.screen.blit(text, newRect)
 
         text = "Score: " + str(self.snake.score)
-        textSize = 30
+        textSize = baseSize-20
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
         text = font.render(text, True, (255, 255, 255))
         newRect = text.get_rect()
@@ -106,7 +108,7 @@ class main:
         self.screen.blit(text, newRect)
 
         text = "press x to restart"
-        textSize = 20
+        textSize = baseSize-30
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
         text = font.render(text, True, (255, 255, 255))
         newRect = text.get_rect()
