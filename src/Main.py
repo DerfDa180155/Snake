@@ -42,6 +42,8 @@ class main:
                         self.snake.playerDirection = 0
                     elif event.key == pygame.K_x and self.snake.gameOver:
                         self.snake.reset()
+                    elif event.key == pygame.K_f:
+                        self.snake.paused = not self.snake.paused
 
             self.windowWidth = self.screen.get_width()
             self.windowHeight = self.screen.get_height()

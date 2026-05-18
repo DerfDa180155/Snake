@@ -20,6 +20,8 @@ class Snake:
         self.gameOver = False
         self.score = -1
 
+        self.paused = False
+
         self.generateEmptyBoard()
 
         self.spawnFood()
