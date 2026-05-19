@@ -64,7 +64,7 @@ class Snake:
         print(self.player)
 
     def movePlayer(self):
-        if self.gameOver:
+        if self.gameOver or self.paused:
             return
 
         x = self.player[len(self.player)-1][1]
