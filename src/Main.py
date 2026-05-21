@@ -59,6 +59,12 @@ class main:
 
             delay -= 1
 
+            if self.snake.paused:
+                smaller = self.windowWidth
+                if self.windowHeight < self.windowWidth:
+                    smaller = self.windowHeight
+                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2)
+
             if self.snake.gameOver:
                 smaller = self.windowWidth
                 if self.windowHeight < self.windowWidth:
@@ -85,6 +91,9 @@ class main:
                 elif self.snake.map[y][x] == self.snake.playerField:
                     color = (0, 255, 64)
                 pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
+
+    def drawPaused(self, posX, posY, sizeX, sizeY):
+        pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
     def drawGameOver(self, posX, posY, sizeX, sizeY):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
