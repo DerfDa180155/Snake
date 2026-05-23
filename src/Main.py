@@ -25,6 +25,7 @@ class main:
 
     def run(self):
         delay = 0
+        directionChanged = False
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # Quit the Game
@@ -32,13 +33,17 @@ class main:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: # Quit the Game
                         self.running = False
-                    elif (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.paused:
+                    elif (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        directionChanged = True
                         self.snake.playerDirection = 3
-                    elif (event.key == pygame.K_a or event.key == pygame.K_LEFT) and self.snake.playerDirection != 0 and not self.snake.gameOver and not self.snake.paused:
+                    elif (event.key == pygame.K_a or event.key == pygame.K_LEFT) and self.snake.playerDirection != 0 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        directionChanged = True
                         self.snake.playerDirection = 2
-                    elif (event.key == pygame.K_s or event.key == pygame.K_DOWN) and self.snake.playerDirection != 3 and not self.snake.gameOver and not self.snake.paused:
+                    elif (event.key == pygame.K_s or event.key == pygame.K_DOWN) and self.snake.playerDirection != 3 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        directionChanged = True
                         self.snake.playerDirection = 1
-                    elif (event.key == pygame.K_d or event.key == pygame.K_RIGHT) and self.snake.playerDirection != 2 and not self.snake.gameOver and not self.snake.paused:
+                    elif (event.key == pygame.K_d or event.key == pygame.K_RIGHT) and self.snake.playerDirection != 2 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        directionChanged = True
                         self.snake.playerDirection = 0
                     elif event.key == pygame.K_x and self.snake.gameOver:
                         self.snake.reset()
@@ -53,6 +58,7 @@ class main:
             self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
             if delay <= 0:
+                directionChanged = False
                 self.snake.movePlayer()
                 #self.snake.spawnFood()
                 delay = 10
