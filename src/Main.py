@@ -69,7 +69,7 @@ class main:
                 smaller = self.windowWidth
                 if self.windowHeight < self.windowWidth:
                     smaller = self.windowHeight
-                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2)
+                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, 10)
 
             if self.snake.gameOver:
                 smaller = self.windowWidth
@@ -98,10 +98,10 @@ class main:
                     color = (0, 255, 64)
                 pygame.draw.rect(self.screen, color, (startX + width/self.snake.sizeX*x, startY + height/self.snake.sizeY*y, (width/self.snake.sizeX)-gapSize, (height/self.snake.sizeY)-gapSize))
 
-    def drawPaused(self, posX, posY, sizeX, sizeY):
+    def drawPaused(self, posX, posY, sizeX, sizeY, textSize):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
-        baseSize = 50
+        baseSize = 50 + textSize
 
         text = "Paused"
         textSize = baseSize + 50
