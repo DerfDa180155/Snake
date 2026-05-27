@@ -75,7 +75,7 @@ class main:
                 smaller = self.windowWidth
                 if self.windowHeight < self.windowWidth:
                     smaller = self.windowHeight
-                self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2)
+                self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, 10)
 
             pygame.display.flip()
             self.clock.tick(60)
@@ -121,10 +121,10 @@ class main:
         newRect.centery = posY + sizeY / 2
         self.screen.blit(text, newRect)
 
-    def drawGameOver(self, posX, posY, sizeX, sizeY):
+    def drawGameOver(self, posX, posY, sizeX, sizeY, textSize):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
-        baseSize = 50
+        baseSize = 50 + textSize
 
         text = "GameOver"
         textSize = baseSize+50
