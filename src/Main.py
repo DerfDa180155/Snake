@@ -69,7 +69,7 @@ class main:
                 smaller = self.windowWidth
                 if self.windowHeight < self.windowWidth:
                     smaller = self.windowHeight
-                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/30))
+                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
 
             if self.snake.gameOver:
                 smaller = self.windowWidth
