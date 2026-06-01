@@ -121,6 +121,15 @@ class main:
         newRect.centery = posY + sizeY / 2
         self.screen.blit(text, newRect)
 
+        text = "Score: " + str(self.snake.score+1)
+        textSize = baseSize - 30
+        font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+        text = font.render(text, True, (255, 255, 255))
+        newRect = text.get_rect()
+        newRect.centerx = posX + sizeX / 2
+        newRect.centery = posY + sizeY / 1.5
+        self.screen.blit(text, newRect)
+
     def drawGameOver(self, posX, posY, sizeX, sizeY, textSize):
         pygame.draw.rect(self.screen, (10, 10, 10), (posX, posY, sizeX, sizeY))
 
