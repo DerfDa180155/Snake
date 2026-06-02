@@ -21,6 +21,8 @@ class main:
 
         self.snake = Snake.Snake()
 
+        self.menu = "game"
+
         self.run()
 
     def run(self):
@@ -55,27 +57,31 @@ class main:
 
             self.screen.fill((50, 50, 50))
 
-            self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
+            match self.menu:
+                case "main":
+                    pass
+                case "game":
+                    self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
-            if delay <= 0:
-                directionChanged = False
-                self.snake.movePlayer()
-                #self.snake.spawnFood()
-                delay = 10
+                    if delay <= 0:
+                        directionChanged = False
+                        self.snake.movePlayer()
+                        #self.snake.spawnFood()
+                        delay = 10
 
-            delay -= 1
+                    delay -= 1
 
-            if self.snake.paused:
-                smaller = self.windowWidth
-                if self.windowHeight < self.windowWidth:
-                    smaller = self.windowHeight
-                self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
+                    if self.snake.paused:
+                        smaller = self.windowWidth
+                        if self.windowHeight < self.windowWidth:
+                            smaller = self.windowHeight
+                        self.drawPaused(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
 
-            if self.snake.gameOver:
-                smaller = self.windowWidth
-                if self.windowHeight < self.windowWidth:
-                    smaller = self.windowHeight
-                self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
+                    if self.snake.gameOver:
+                        smaller = self.windowWidth
+                        if self.windowHeight < self.windowWidth:
+                            smaller = self.windowHeight
+                        self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
 
             pygame.display.flip()
             self.clock.tick(60)
