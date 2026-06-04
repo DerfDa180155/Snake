@@ -34,8 +34,14 @@ class main:
                     self.running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: # Quit the Game
-                        self.running = False
-                    if self.menu == "game":
+                        if self.menu == "main":
+                            self.running = False
+                        elif self.menu == "game":
+                            self.menu = "main"
+                    if self.menu == "main":
+                        if event.key == pygame.K_SPACE:
+                            self.menu = "game"
+                    elif self.menu == "game":
                         if (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
                             directionChanged = True
                             self.snake.playerDirection = 3
