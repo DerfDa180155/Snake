@@ -66,7 +66,14 @@ class main:
 
             match self.menu:
                 case "main":
-                    pass
+                    textSize = 50
+                    font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+
+                    text = font.render("Snake", True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = self.windowWidth / 2
+                    newRect.y = textSize
+                    self.screen.blit(text, newRect)
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
