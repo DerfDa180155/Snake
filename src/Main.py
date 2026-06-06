@@ -40,6 +40,7 @@ class main:
                             self.menu = "main"
                     if self.menu == "main":
                         if event.key == pygame.K_SPACE:
+                            self.snake.reset()
                             self.menu = "game"
                     elif self.menu == "game":
                         if (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
