@@ -78,6 +78,15 @@ class main:
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
+                    textSize = 50
+                    font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+
+                    text = font.render("Score: " + str(self.snake.score), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = self.windowWidth / 2
+                    newRect.y = textSize
+                    self.screen.blit(text, newRect)
+
                     if delay <= 0:
                         directionChanged = False
                         self.snake.movePlayer()
