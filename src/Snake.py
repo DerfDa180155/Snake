@@ -36,7 +36,7 @@ class Snake:
         self.lastFoodLocation = [-1, -1]
 
         self.gameOver = False
-        self.score = -1
+        self.score = 0
 
         self.generateEmptyBoard()
 
@@ -97,14 +97,14 @@ class Snake:
                         self.map[y-1][x] = self.playerField
                         moved = True
 
+        if not moved:
+            self.gameOver = True
+
         if moved and not self.growPlayer():
             self.map[self.player[0][0]][self.player[0][1]] = self.emptyField
             self.player.pop(0)
-        else:
+        elif not self.gameOver:
             self.score += 1
-
-        if not moved:
-            self.gameOver = True
 
     def growPlayer(self):
         foodLocation = self.lastFoodLocation
