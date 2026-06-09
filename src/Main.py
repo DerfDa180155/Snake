@@ -89,7 +89,7 @@ class main:
 
                     if delay <= 0:
                         directionChanged = False
-                        self.snake.movePlayer()
+                        self.snake.update()
                         #self.snake.spawnFood()
                         delay = 10
 
