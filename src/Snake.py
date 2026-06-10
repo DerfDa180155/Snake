@@ -21,6 +21,7 @@ class Snake:
         self.score = -1
 
         self.isStartScreen = True
+        self.startScreenCounter = 180
         self.paused = False
 
         self.generateEmptyBoard()
@@ -37,6 +38,7 @@ class Snake:
         self.lastFoodLocation = [-1, -1]
 
         self.isStartScreen = True
+        self.startScreenCounter = 3
         self.paused = False
         self.gameOver = False
         self.score = 0
@@ -67,7 +69,12 @@ class Snake:
         print(self.player)
 
     def update(self):
-        if not self.isStartScreen and not self.paused and not self.gameOver:
+        if self.isStartScreen:
+            print(self.startScreenCounter)
+            self.startScreenCounter -= 1
+            if self.startScreenCounter == 0:
+                self.isStartScreen = False
+        elif not self.paused and not self.gameOver:
             self.movePlayer()
 
     def movePlayer(self):
