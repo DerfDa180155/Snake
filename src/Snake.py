@@ -21,7 +21,7 @@ class Snake:
         self.score = -1
 
         self.isStartScreen = True
-        self.startScreenCounter = 180
+        self.startScreenCounter = 18
         self.paused = False
 
         self.generateEmptyBoard()
@@ -38,7 +38,7 @@ class Snake:
         self.lastFoodLocation = [-1, -1]
 
         self.isStartScreen = True
-        self.startScreenCounter = 3
+        self.startScreenCounter = 18
         self.paused = False
         self.gameOver = False
         self.score = 0
