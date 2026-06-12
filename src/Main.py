@@ -43,16 +43,16 @@ class main:
                             self.snake.reset()
                             self.menu = "game"
                     elif self.menu == "game":
-                        if (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        if (event.key == pygame.K_w or event.key == pygame.K_UP) and self.snake.playerDirection != 1 and not self.snake.gameOver and not self.snake.isStartScreen and not self.snake.paused and not directionChanged:
                             directionChanged = True
                             self.snake.playerDirection = 3
-                        elif (event.key == pygame.K_a or event.key == pygame.K_LEFT) and self.snake.playerDirection != 0 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        elif (event.key == pygame.K_a or event.key == pygame.K_LEFT) and self.snake.playerDirection != 0 and not self.snake.gameOver and not self.snake.isStartScreen and not self.snake.paused and not directionChanged:
                             directionChanged = True
                             self.snake.playerDirection = 2
-                        elif (event.key == pygame.K_s or event.key == pygame.K_DOWN) and self.snake.playerDirection != 3 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        elif (event.key == pygame.K_s or event.key == pygame.K_DOWN) and self.snake.playerDirection != 3 and not self.snake.gameOver and not self.snake.isStartScreen and not self.snake.paused and not directionChanged:
                             directionChanged = True
                             self.snake.playerDirection = 1
-                        elif (event.key == pygame.K_d or event.key == pygame.K_RIGHT) and self.snake.playerDirection != 2 and not self.snake.gameOver and not self.snake.paused and not directionChanged:
+                        elif (event.key == pygame.K_d or event.key == pygame.K_RIGHT) and self.snake.playerDirection != 2 and not self.snake.gameOver and not self.snake.isStartScreen and not self.snake.paused and not directionChanged:
                             directionChanged = True
                             self.snake.playerDirection = 0
                         elif event.key == pygame.K_x and self.snake.gameOver:
