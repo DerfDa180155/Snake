@@ -23,6 +23,8 @@ class main:
 
         self.menu = "main"
 
+        self.mainButtons = []
+
         self.run()
 
     def run(self):
@@ -75,6 +77,11 @@ class main:
                     newRect.centerx = self.windowWidth / 2
                     newRect.y = textSize
                     self.screen.blit(text, newRect)
+
+                    for button in self.mainButtons:
+                        pass
+                        #button.draw()
+
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
 
