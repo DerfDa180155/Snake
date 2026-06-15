@@ -1,6 +1,7 @@
 import pygame
 
 import Snake
+import Button
 
 class main:
     def __init__(self):
@@ -23,7 +24,7 @@ class main:
 
         self.menu = "main"
 
-        self.mainButtons = []
+        self.mainButtons = [Button.Button(self.screen, 100, 100, 100, 100, "test")]
 
         self.run()
 
@@ -79,8 +80,7 @@ class main:
                     self.screen.blit(text, newRect)
 
                     for button in self.mainButtons:
-                        pass
-                        #button.draw()
+                        button.draw()
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
