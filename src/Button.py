@@ -10,7 +10,7 @@ class Button:
         self.onClick = onCLick
 
     def draw(self):
-        pass
+        pygame.draw.rect(self.screen, (255,255,255), (self.x, self.y, self.sizeX, self.sizeY))
 
     def hover(self):
         pass
