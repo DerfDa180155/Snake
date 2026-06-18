@@ -68,6 +68,8 @@ class main:
 
             self.screen.fill((50, 50, 50))
 
+            mx, my = pygame.mouse.get_pos()
+
             match self.menu:
                 case "main":
                     textSize = 50
@@ -81,6 +83,9 @@ class main:
 
                     for button in self.mainButtons:
                         button.draw()
+                        button.hover(mx=mx, my=my)
+                        if button.isHovered:
+                            print(button.onClick)
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
