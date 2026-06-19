@@ -31,6 +31,7 @@ class main:
     def run(self):
         delay = 0
         directionChanged = False
+        oldMousePressed = pygame.mouse.get_pressed()
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # Quit the Game
@@ -69,6 +70,14 @@ class main:
             self.screen.fill((50, 50, 50))
 
             mx, my = pygame.mouse.get_pos()
+            mousePressed = pygame.mouse.get_pressed()
+            mousePressedUp = []
+            mousePressedDown = []
+            for i in range(len(mousePressed)):
+                mousePressedUp.append(not mousePressed[i] and oldMousePressed[i])
+                mousePressedDown.append(mousePressed[i] and not oldMousePressed[i])
+
+            oldMousePressed = mousePressed
 
             match self.menu:
                 case "main":
@@ -84,7 +93,7 @@ class main:
                     for button in self.mainButtons:
                         button.draw()
                         button.hover(mx=mx, my=my)
-                        if button.isHovered:
+                        if button.clicked(mx=mx, my=my, mouseClick=mousePressedUp):
                             print(button.onClick)
 
                 case "game":
