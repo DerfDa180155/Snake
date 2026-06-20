@@ -92,8 +92,8 @@ class main:
 
                     for button in self.mainButtons:
                         button.draw()
-                        button.hover(mx=mx, my=my)
-                        if button.clicked(mx=mx, my=my, mouseClick=mousePressedUp):
+                        button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
+                        if button.isleftClicked:
                             print(button.onClick)
 
                 case "game":
