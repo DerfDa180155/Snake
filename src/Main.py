@@ -94,7 +94,10 @@ class main:
                         button.draw()
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
-                            print(button.onClick)
+                            match button.onClick:
+                                case "test":
+                                    self.snake.reset()
+                                    self.menu = "game"
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
