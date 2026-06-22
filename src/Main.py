@@ -24,7 +24,7 @@ class main:
 
         self.menu = "main"
 
-        self.mainButtons = [Button.Button(self.screen, 100, 100, 100, 100, (255,0,0), "test")]
+        self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "start")]
 
         self.run()
 
@@ -95,7 +95,7 @@ class main:
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
                             match button.onClick:
-                                case "test":
+                                case "start":
                                     self.snake.reset()
                                     self.menu = "game"
 
