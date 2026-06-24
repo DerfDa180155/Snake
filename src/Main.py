@@ -25,6 +25,7 @@ class main:
         self.menu = "main"
 
         self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "start")]
+        self.gameButtons = [Button.Button(self.screen, 200, 100, 100, 100, (255, 255, 255), "back")]
 
         self.run()
 
@@ -131,6 +132,13 @@ class main:
                             smaller = self.windowHeight
                         self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
 
+                    for button in self.gameButtons:
+                        button.draw()
+                        button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
+                        if button.isleftClicked:
+                            match button.onClick:
+                                case "back":
+                                    pass
             pygame.display.flip()
             self.clock.tick(60)
 
