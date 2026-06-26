@@ -138,7 +138,7 @@ class main:
                         if button.isleftClicked:
                             match button.onClick:
                                 case "back":
-                                    pass
+                                    self.menu = "main"
             pygame.display.flip()
             self.clock.tick(60)
 
