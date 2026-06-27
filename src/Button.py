@@ -14,10 +14,9 @@ class Button:
         self.isleftClicked = False
         self.isrightClicked = False
 
-    def draw(self):
+    def draw(self, textSize=50):
         pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.sizeX, self.sizeY))
 
-        textSize = 50
         font = pygame.font.Font(pygame.font.get_default_font(), textSize)
 
         text = font.render(self.onClick, True, (0, 150, 120))

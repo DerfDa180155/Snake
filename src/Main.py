@@ -133,7 +133,7 @@ class main:
                         self.drawGameOver(self.windowWidth/2-(smaller/1.5)/2, self.windowHeight/2-(smaller/2)/2, smaller/1.5, smaller/2, int(smaller/50))
 
                     for button in self.gameButtons:
-                        button.draw()
+                        button.draw(30)
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
                             match button.onClick:
