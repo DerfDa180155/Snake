@@ -24,7 +24,7 @@ class main:
 
         self.menu = "main"
 
-        self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "start")]
+        self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "start"), Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "settings")]
         self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "back")]
 
         self.run()
