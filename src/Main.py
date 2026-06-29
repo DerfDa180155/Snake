@@ -99,6 +99,8 @@ class main:
                                 case "start":
                                     self.snake.reset()
                                     self.menu = "game"
+                                case "settings":
+                                    self.menu = "settings"
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
