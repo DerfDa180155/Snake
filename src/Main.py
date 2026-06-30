@@ -41,7 +41,7 @@ class main:
                     if event.key == pygame.K_ESCAPE: # Quit the Game
                         if self.menu == "main":
                             self.running = False
-                        elif self.menu == "game":
+                        elif self.menu == "game" or self.menu == "settings":
                             self.menu = "main"
                     if self.menu == "main":
                         if event.key == pygame.K_SPACE:
