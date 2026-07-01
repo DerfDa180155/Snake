@@ -69,7 +69,7 @@ class Snake:
         print(self.player)
 
     def update(self):
-        if self.isStartScreen:
+        if self.isStartScreen and not self.paused:
             print(self.startScreenCounter)
             self.startScreenCounter -= 1
             if self.startScreenCounter == 0:
