@@ -141,6 +141,18 @@ class main:
                             match button.onClick:
                                 case "back":
                                     self.menu = "main"
+
+                case "settings":
+                    textSize = 50
+                    font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+
+                    text = font.render("Settings", True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = self.windowWidth / 2
+                    newRect.y = textSize
+                    self.screen.blit(text, newRect)
+
+
             pygame.display.flip()
             self.clock.tick(60)
 
