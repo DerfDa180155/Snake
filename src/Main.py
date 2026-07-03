@@ -24,8 +24,9 @@ class main:
 
         self.menu = "main"
 
-        self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "start"), Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "settings")]
-        self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "back")]
+        self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "Start"),
+                            Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "Settings")]
+        self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back")]
 
         self.run()
 
@@ -96,10 +97,10 @@ class main:
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
                             match button.onClick:
-                                case "start":
+                                case "Start":
                                     self.snake.reset()
                                     self.menu = "game"
-                                case "settings":
+                                case "Settings":
                                     self.menu = "settings"
 
                 case "game":
@@ -139,7 +140,7 @@ class main:
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
                             match button.onClick:
-                                case "back":
+                                case "Back":
                                     self.menu = "main"
 
                 case "settings":
