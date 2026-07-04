@@ -121,6 +121,8 @@ class main:
                         #self.snake.spawnFood()
                         delay = 10
 
+                        delay -= int(self.snake.score/10)
+
                     delay -= 1
 
                     if self.snake.paused:
