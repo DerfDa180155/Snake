@@ -27,7 +27,9 @@ class main:
         self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "Start"),
                             Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "Settings")]
         self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back")]
-        self.settingsButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back")]
+        self.settingsButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back"),
+                                Button.Button(self.screen, 100, 200, 200, 100, (255, 255, 255), "X"),
+                                Button.Button(self.screen, 100, 400, 200, 100, (255, 255, 255), "Y")]
 
         self.run()
 
@@ -156,7 +158,7 @@ class main:
                     newRect.y = textSize
                     self.screen.blit(text, newRect)
 
-                    for button in self.gameButtons:
+                    for button in self.settingsButtons:
                         button.draw(30)
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
                         if button.isleftClicked:
