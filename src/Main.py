@@ -28,8 +28,10 @@ class main:
                             Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "Settings")]
         self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back")]
         self.settingsButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back"),
-                                Button.Button(self.screen, 100, 200, 200, 100, (255, 255, 255), "X"),
-                                Button.Button(self.screen, 100, 400, 200, 100, (255, 255, 255), "Y")]
+                                Button.Button(self.screen, 100, 300, 100, 50, (255, 255, 255), "X+"),
+                                Button.Button(self.screen, 250, 300, 100, 50, (255, 255, 255), "X-"),
+                                Button.Button(self.screen, 100, 400, 100, 50, (255, 255, 255), "Y+"),
+                                Button.Button(self.screen, 250, 400, 100, 50, (255, 255, 255), "Y-")]
 
         self.run()
 
