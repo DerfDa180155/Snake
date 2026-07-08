@@ -167,6 +167,14 @@ class main:
                             match button.onClick:
                                 case "Back":
                                     self.menu = "main"
+                                case "X+":
+                                    self.snake.sizeX += 1
+                                case "X-":
+                                    self.snake.sizeX -= 1
+                                case "Y+":
+                                    self.snake.sizeY += 1
+                                case "Y-":
+                                    self.snake.sizeY -= 1
 
 
             pygame.display.flip()
