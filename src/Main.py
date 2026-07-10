@@ -169,12 +169,16 @@ class main:
                                     self.menu = "main"
                                 case "X+":
                                     self.snake.sizeX += 1
+                                    if self.snake.sizeX > 40:
+                                        self.snake.sizeX = 40
                                 case "X-":
                                     self.snake.sizeX -= 1
                                     if self.snake.sizeX < 2:
                                         self.snake.sizeX = 2
                                 case "Y+":
                                     self.snake.sizeY += 1
+                                    if self.snake.sizeY > 40:
+                                        self.snake.sizeY = 40
                                 case "Y-":
                                     self.snake.sizeY -= 1
                                     if self.snake.sizeY < 2:
