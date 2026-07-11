@@ -160,6 +160,21 @@ class main:
                     newRect.y = textSize
                     self.screen.blit(text, newRect)
 
+                    textSize = 30
+                    font = pygame.font.Font(pygame.font.get_default_font(), textSize)
+
+                    text = font.render("x: " + str(self.snake.sizeX), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.x = 400
+                    newRect.y = 310
+                    self.screen.blit(text, newRect)
+
+                    text = font.render("y: " + str(self.snake.sizeY), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.x = 400
+                    newRect.y = 410
+                    self.screen.blit(text, newRect)
+
                     for button in self.settingsButtons:
                         button.draw(30)
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
