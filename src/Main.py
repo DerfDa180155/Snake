@@ -120,6 +120,13 @@ class main:
                     newRect.y = textSize
                     self.screen.blit(text, newRect)
 
+                    if self.snake.isStartScreen and self.snake.startScreenCounter >= 0:
+                        text = font.render("Start: " + str(int(self.snake.startScreenCounter/6)+1), True, (255, 255, 255))
+                        newRect = text.get_rect()
+                        newRect.centerx = self.windowWidth / 2
+                        newRect.y = 1400
+                        self.screen.blit(text, newRect)
+
                     if delay <= 0:
                         directionChanged = False
                         self.snake.update()
