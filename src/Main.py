@@ -25,7 +25,8 @@ class main:
         self.menu = "main"
 
         self.mainButtons = [Button.Button(self.screen, 400, 300, 700, 200, (255, 255, 255), "Start"),
-                            Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "Settings")]
+                            Button.Button(self.screen, 400, 600, 700, 200, (255, 255, 255), "Settings"),
+                            Button.Button(self.screen, 400, 900, 700, 200, (255, 255, 255), "Quit")]
         self.gameButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back")]
         self.settingsButtons = [Button.Button(self.screen, 50, 50, 150, 60, (255, 255, 255), "Back"),
                                 Button.Button(self.screen, 100, 300, 100, 50, (255, 255, 255), "X+"),
@@ -107,6 +108,8 @@ class main:
                                     self.menu = "game"
                                 case "Settings":
                                     self.menu = "settings"
+                                case "Quit":
+                                    print("quit")
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
