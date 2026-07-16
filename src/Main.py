@@ -109,7 +109,7 @@ class main:
                                 case "Settings":
                                     self.menu = "settings"
                                 case "Quit":
-                                    print("quit")
+                                    self.running = False
 
                 case "game":
                     self.drawBoardWithWindowSize(self.windowWidth, self.windowHeight)
