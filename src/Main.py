@@ -32,7 +32,9 @@ class main:
                                 Button.Button(self.screen, 100, 300, 100, 50, (255, 255, 255), "X+"),
                                 Button.Button(self.screen, 250, 300, 100, 50, (255, 255, 255), "X-"),
                                 Button.Button(self.screen, 100, 400, 100, 50, (255, 255, 255), "Y+"),
-                                Button.Button(self.screen, 250, 400, 100, 50, (255, 255, 255), "Y-")]
+                                Button.Button(self.screen, 250, 400, 100, 50, (255, 255, 255), "Y-"),
+                                Button.Button(self.screen, 100, 500, 250, 50, (255, 255, 255), "speedup+"),
+                                Button.Button(self.screen, 100, 600, 250, 50, (255, 255, 255), "speedup-")]
 
         self.run()
 
