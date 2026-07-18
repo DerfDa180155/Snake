@@ -21,6 +21,7 @@ class main:
         self.running = True
 
         self.snake = Snake.Snake()
+        self.speedup = 10
 
         self.menu = "main"
 
@@ -138,7 +139,7 @@ class main:
                         #self.snake.spawnFood()
                         delay = 10
 
-                        delay -= int(self.snake.score/10)
+                        delay -= int(self.snake.score/self.speedup)
 
                     delay -= 1
 
@@ -210,6 +211,10 @@ class main:
                                     self.snake.sizeY -= 1
                                     if self.snake.sizeY < 2:
                                         self.snake.sizeY = 2
+                                case "speedup+":
+                                    pass
+                                case "speedup-":
+                                    pass
 
 
             pygame.display.flip()
