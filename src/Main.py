@@ -212,9 +212,13 @@ class main:
                                     if self.snake.sizeY < 2:
                                         self.snake.sizeY = 2
                                 case "speedup+":
-                                    pass
+                                    self.speedup += 1
+                                    if self.speedup > 20:
+                                        self.speedup = 20
                                 case "speedup-":
-                                    pass
+                                    self.speedup -= 1
+                                    if self.speedup < 1:
+                                        self.speedup = 1
 
 
             pygame.display.flip()
