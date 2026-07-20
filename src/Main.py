@@ -188,6 +188,12 @@ class main:
                     newRect.y = 407
                     self.screen.blit(text, newRect)
 
+                    text = font.render("Speedup: " + str(self.speedup), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.x = 400
+                    newRect.y = 507
+                    self.screen.blit(text, newRect)
+
                     for button in self.settingsButtons:
                         button.draw(30)
                         button.clicked(mx=mx, my=my, mouseClick=mousePressedUp)
