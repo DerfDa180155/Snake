@@ -35,7 +35,9 @@ class main:
                                 Button.Button(self.screen, 100, 400, 100, 50, (255, 255, 255), "Y+"),
                                 Button.Button(self.screen, 250, 400, 100, 50, (255, 255, 255), "Y-"),
                                 Button.Button(self.screen, 100, 500, 250, 50, (255, 255, 255), "speedup+"),
-                                Button.Button(self.screen, 100, 600, 250, 50, (255, 255, 255), "speedup-")]
+                                Button.Button(self.screen, 100, 600, 250, 50, (255, 255, 255), "speedup-"),
+                                Button.Button(self.screen, 100, 700, 250, 50, (255, 255, 255), "food+"),
+                                Button.Button(self.screen, 100, 800, 250, 50, (255, 255, 255), "food-")]
 
         self.run()
 
@@ -225,6 +227,10 @@ class main:
                                     self.speedup -= 1
                                     if self.speedup < 1:
                                         self.speedup = 1
+                                case "food+":
+                                    print("food +")
+                                case "food-":
+                                    print("food -")
 
 
             pygame.display.flip()
