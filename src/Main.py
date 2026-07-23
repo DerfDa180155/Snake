@@ -196,7 +196,7 @@ class main:
                     newRect.y = 507
                     self.screen.blit(text, newRect)
 
-                    text = font.render("Food: " + str(1), True, (255, 255, 255))
+                    text = font.render("Food: " + str(self.snake.amountOfFood), True, (255, 255, 255))
                     newRect = text.get_rect()
                     newRect.x = 400
                     newRect.y = 707
@@ -234,9 +234,13 @@ class main:
                                     if self.speedup < 1:
                                         self.speedup = 1
                                 case "food+":
-                                    print("food +")
+                                    self.snake.amountOfFood += 1
+                                    if self.snake.amountOfFood > 20:
+                                        self.snake.amountOfFood = 20
                                 case "food-":
-                                    print("food -")
+                                    self.snake.amountOfFood -= 1
+                                    if self.snake.amountOfFood < 1:
+                                        self.snake.amountOfFood = 1
 
 
             pygame.display.flip()
