@@ -132,12 +132,13 @@ class Snake:
         if self.foodPlaced():
             return
 
-        x = random.randint(0, self.sizeX-1)
-        y = random.randint(0, self.sizeY-1)
+        for i in range(self.amountOfFood):
+            x = random.randint(0, self.sizeX-1)
+            y = random.randint(0, self.sizeY-1)
 
-        while not self.isEmpty(x, y):
-            x = random.randint(0, self.sizeX - 1)
-            y = random.randint(0, self.sizeY - 1)
+            while not self.isEmpty(x, y):
+                x = random.randint(0, self.sizeX - 1)
+                y = random.randint(0, self.sizeY - 1)
 
         self.map[y][x] = self.foodField
         self.lastFoodLocation = [y, x]
