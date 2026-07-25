@@ -16,6 +16,7 @@ class Snake:
         self.playerDirection = 0
 
         self.lastFoodLocation = [-1, -1]
+        self.foodLocations = []
         self.amountOfFood = 1
 
         self.gameOver = False
@@ -125,8 +126,12 @@ class Snake:
         self.spawnFood()
         return playerY == foodLocation[0] and playerX == foodLocation[1]
 
-    def foodPlaced(self):
+    def foodPlaced(self, location):
         return self.map[self.lastFoodLocation[0]][self.lastFoodLocation[1]] == self.foodField
+
+    def checkAllFoodPlaced(self):
+        for i in range(self.amountOfFood):
+            self.foodPlaced(self.foodLocations[i])
 
     def spawnFood(self):
         if self.foodPlaced():
