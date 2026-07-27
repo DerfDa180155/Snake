@@ -120,11 +120,17 @@ class Snake:
             self.score += 1
 
     def growPlayer(self):
-        foodLocation = self.lastFoodLocation
         playerX = self.player[len(self.player)-1][1]
         playerY = self.player[len(self.player)-1][0]
-        self.spawnFood()
-        return playerY == foodLocation[0] and playerX == foodLocation[1]
+
+        grow = False
+        for i in range(self.amountOfFood):
+            if playerY == self.lastFoodLocation[0] and playerX == self.lastFoodLocation[1]:
+                grow = True
+
+        if grow:
+            self.spawnFood()
+        return grow
 
     def foodPlaced(self, location):
         return self.map[location[0]][location[1]] == self.foodField
