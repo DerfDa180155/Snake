@@ -151,7 +151,7 @@ class Snake:
                 x = random.randint(0, self.sizeX - 1)
                 y = random.randint(0, self.sizeY - 1)
 
-        self.map[y][x] = self.foodField
+            self.map[y][x] = self.foodField
         self.lastFoodLocation = [y, x]
 
     def isEmpty(self, x, y):
