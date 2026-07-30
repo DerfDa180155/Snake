@@ -144,16 +144,18 @@ class Snake:
             return
 
         for i in range(self.amountOfFood):
-            x = random.randint(0, self.sizeX-1)
-            y = random.randint(0, self.sizeY-1)
+            self.spawnOneFood()
 
-            while not self.isEmpty(x, y):
-                x = random.randint(0, self.sizeX - 1)
-                y = random.randint(0, self.sizeY - 1)
+    def spawnOneFood(self):
+        x = random.randint(0, self.sizeX - 1)
+        y = random.randint(0, self.sizeY - 1)
 
-            self.map[y][x] = self.foodField
-            self.foodLocations.append([y, x])
-        self.lastFoodLocation = [y, x]
+        while not self.isEmpty(x, y):
+            x = random.randint(0, self.sizeX - 1)
+            y = random.randint(0, self.sizeY - 1)
+
+        self.map[y][x] = self.foodField
+        self.foodLocations.append([y, x])
 
     def isEmpty(self, x, y):
         return self.map[y][x] == self.emptyField
