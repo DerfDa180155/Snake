@@ -121,11 +121,14 @@ class Snake:
         playerY = self.player[len(self.player)-1][0]
 
         grow = False
+        index = 0
         for i in range(self.amountOfFood):
             if playerY == self.foodLocations[0] and playerX == self.foodLocations[1]:
                 grow = True
+                index = i
 
         if grow:
+            self.foodLocations.pop(index)
             self.spawnOneFood()
         return grow
 
