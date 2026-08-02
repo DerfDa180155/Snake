@@ -132,7 +132,6 @@ class Snake:
         if grow:
             self.foodLocations.pop(index)
             self.spawnOneFood()
-        print(self.foodLocations)
         return grow
 
     def foodPlaced(self, location):
