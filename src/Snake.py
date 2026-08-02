@@ -36,6 +36,8 @@ class Snake:
 
         self.playerDirection = 0
 
+        self.foodLocations = []
+
         self.isStartScreen = True
         self.startScreenCounter = 18
         self.paused = False
@@ -123,13 +125,14 @@ class Snake:
         grow = False
         index = 0
         for i in range(self.amountOfFood):
-            if playerY == self.foodLocations[0] and playerX == self.foodLocations[1]:
+            if playerY == self.foodLocations[i][0] and playerX == self.foodLocations[i][1]:
                 grow = True
                 index = i
 
         if grow:
             self.foodLocations.pop(index)
             self.spawnOneFood()
+        print(self.foodLocations)
         return grow
 
     def foodPlaced(self, location):
