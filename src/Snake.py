@@ -12,11 +12,15 @@ class Snake:
         self.emptyField = ""
         self.foodField = "x"
         self.playerField = "o"
+        self.wallField = "w"
 
         self.playerDirection = 0
 
         self.foodLocations = []
         self.amountOfFood = 1
+
+        self.wallLocations = []
+        self.amountOfWall = 10
 
         self.gameOver = False
         self.score = -1
@@ -37,6 +41,8 @@ class Snake:
         self.playerDirection = 0
 
         self.foodLocations = []
+
+        self.wallLocations = []
 
         self.isStartScreen = True
         self.startScreenCounter = 18
@@ -155,6 +161,9 @@ class Snake:
 
         self.map[y][x] = self.foodField
         self.foodLocations.append([y, x])
+
+    def spawnWall(self):
+        pass
 
     def isEmpty(self, x, y):
         return self.map[y][x] == self.emptyField
