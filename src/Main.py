@@ -37,7 +37,9 @@ class main:
                                 Button.Button(self.screen, 100, 500, 250, 50, (255, 255, 255), "speedup+"),
                                 Button.Button(self.screen, 100, 600, 250, 50, (255, 255, 255), "speedup-"),
                                 Button.Button(self.screen, 100, 700, 250, 50, (255, 255, 255), "food+"),
-                                Button.Button(self.screen, 100, 800, 250, 50, (255, 255, 255), "food-")]
+                                Button.Button(self.screen, 100, 800, 250, 50, (255, 255, 255), "food-"),
+                                Button.Button(self.screen, 100, 900, 250, 50, (255, 255, 255), "wall+"),
+                                Button.Button(self.screen, 100, 1000, 250, 50, (255, 255, 255), "wall-")]
 
         self.run()
 
@@ -200,6 +202,12 @@ class main:
                     newRect = text.get_rect()
                     newRect.x = 400
                     newRect.y = 707
+                    self.screen.blit(text, newRect)
+
+                    text = font.render("Wall: " + str(self.snake.amountOfWall), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.x = 400
+                    newRect.y = 907
                     self.screen.blit(text, newRect)
 
                     for button in self.settingsButtons:
