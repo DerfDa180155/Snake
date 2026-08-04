@@ -249,6 +249,14 @@ class main:
                                     self.snake.amountOfFood -= 1
                                     if self.snake.amountOfFood < 1:
                                         self.snake.amountOfFood = 1
+                                case "wall+":
+                                    self.snake.amountOfWall += 1
+                                    if self.snake.amountOfWall > 20:
+                                        self.snake.amountOfWall = 20
+                                case "wall-":
+                                    self.snake.amountOfWall -= 1
+                                    if self.snake.amountOfWall < 1:
+                                        self.snake.amountOfWall = 1
 
 
             pygame.display.flip()
