@@ -33,6 +33,7 @@ class Snake:
 
         self.spawnFood()
         self.spawnPlayer()
+        self.spawnWall()
 
     def reset(self):
         self.map = []
@@ -163,7 +164,15 @@ class Snake:
         self.foodLocations.append([y, x])
 
     def spawnWall(self):
-        pass
+        for i in range(self.amountOfWall):
+            x = random.randint(0, self.sizeX - 1)
+            y = random.randint(0, self.sizeY - 1)
+    
+            while not self.isEmpty(x, y):
+                x = random.randint(0, self.sizeX - 1)
+                y = random.randint(0, self.sizeY - 1)
+
+            self.map[y][x] = self.wallField
 
     def isEmpty(self, x, y):
         return self.map[y][x] == self.emptyField
