@@ -55,6 +55,7 @@ class Snake:
 
         self.spawnFood()
         self.spawnPlayer()
+        self.spawnWall()
 
     def generateEmptyBoard(self):
         self.map = []
@@ -143,10 +144,6 @@ class Snake:
 
     def foodPlaced(self, location):
         return self.map[location[0]][location[1]] == self.foodField
-
-    def checkAllFoodPlaced(self):
-        for i in range(self.amountOfFood):
-            self.foodPlaced(self.foodLocations[i])
 
     def spawnFood(self):
         for i in range(self.amountOfFood):
